@@ -31,7 +31,13 @@ jobs:
       with:
         name: paper
         path: .
-  
+      
+    - name: mkdir
+      run: |
+       rm .gitmodule
+       rm README
+       rm LICENSE
+       
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
