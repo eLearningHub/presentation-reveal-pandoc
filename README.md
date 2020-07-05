@@ -1,6 +1,6 @@
 # Making HTML5 slides with Reveal.js and Pandoc
 
-![Pandoc](https://github.com/eLearningHub/presentation-reveal-pandoc/workflows/Pandoc/badge.svg)
+![Pandoc slides](https://github.com/eLearningHub/presentation-reveal-pandoc/workflows/Pandoc%20slides/badge.svg)
 
 This repository generates HTML slides from a Markdown file (`index.md`) using [reveal.js](https://revealjs.com/) and [pandoc](https://pandoc.org/). You can see the slides [here](https://elearninghub.github.io/presentation-reveal-pandoc). Whenever the source file changes, a [GitHub Action](https://github.com/features/actions) updates the slides automatically.
 
