@@ -1,4 +1,4 @@
-name: Pandoc
+name: Pandoc slides
 
 on:
   push:
