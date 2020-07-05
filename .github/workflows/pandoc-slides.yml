@@ -34,7 +34,7 @@ jobs:
       
     - name: mkdir
       run: |
-       rm .gitmodules README.md LICENSE index.md
+       rm .gitmodules README.md LICENSE index.m 2> /dev/null
        
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
