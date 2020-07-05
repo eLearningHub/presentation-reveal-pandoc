@@ -32,7 +32,7 @@ jobs:
         name: paper
         path: .
 
-    - name: mkdir
+    - name: Remove extra files
       run: |
        rm -f .gitmodules README.md LICENSE index.m
  
