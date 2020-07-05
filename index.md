@@ -8,5 +8,5 @@ date: June 21, 2017
 print("hello world")
 ```
 # Bar
-* test
+* $x^2#
 * test
