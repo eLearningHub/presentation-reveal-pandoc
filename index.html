@@ -93,6 +93,20 @@
   <!--[if lt IE 9]>
   <script src="https://unpkg.com/reveal.js@3.9.2//lib/js/html5shiv.js"></script>
   <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
 </head>
 <body>
   <div class="reveal">
@@ -111,7 +125,7 @@
 <section id="bar" class="slide level1">
 <h1>Bar</h1>
 <ul>
-<li><span class="math inline"><em>x</em><sup>2</sup></span></li>
+<li><span class="math inline">x^2</span></li>
 <li>test</li>
 </ul>
 </section>
