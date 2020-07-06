@@ -24,7 +24,7 @@ jobs:
     - name: Generate HTML slides with Pandoc
       uses: docker://pandoc/latex:2.9
       with:
-        args: "--mathjax -t revealjs -s --template=src/template-revealjs.html --standalone --section-divs -s -o src/index.html src/index.md -V revealjs-url=https://unpkg.com/reveal.js@3.9.2/"
+        args: "--mathjax -t revealjs -s --standalone --section-divs -s -o src/index.html src/index.md -V revealjs-url=https://unpkg.com/reveal.js@3.9.2/"
 
     - name: Upload artifact
       uses: actions/upload-artifact@master
