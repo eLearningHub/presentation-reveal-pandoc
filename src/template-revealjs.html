@@ -319,6 +319,7 @@ $if(display)$
         // The display mode that will be used to show slides
         display: $display$,
 $endif$
+    
 $if(mathjax)$
         math: {
           mathjax: '$mathjaxurl$',
@@ -338,17 +339,15 @@ $if(mathjax)$
         },
 $endif$
 
-        // reveal.js plugins
-        plugins: [
-$if(mathjax)$
-          RevealMath,
-$endif$
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://unpkg.com/reveal.js@3.9.2//lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://unpkg.com/reveal.js@3.9.2//plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2//plugin/math/math.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2//plugin/notes/notes.js', async: true }
         ]
       });
-    </script>
+  </script>
   $for(include-after)$
   $include-after$
   $endfor$
