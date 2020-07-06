@@ -34,7 +34,7 @@ jobs:
 
     - name: Remove extra files
       run: |
-       rm -f ./src/index.md
+       rm -f ./src/index.md ./src/template-revealjs.html
  
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
