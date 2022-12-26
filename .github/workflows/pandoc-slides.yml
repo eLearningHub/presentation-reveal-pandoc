@@ -14,15 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@master
     
-    - name: Checkout submodules
-      uses: textbook/git-checkout-submodule-action@master
-
     - name: mkdir
       run: |
        mkdir public
        
     - name: Generate HTML slides with Pandoc
-      uses: docker://pandoc/latex:2.9
+      uses: docker://pandoc/latex:2.19
       with:
         args: "--mathjax -t revealjs -s --standalone --section-divs -s -o src/index.html src/index.md"
 
