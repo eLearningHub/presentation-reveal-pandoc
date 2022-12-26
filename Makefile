@@ -1,8 +1,8 @@
-submodule:
-	git submodule update --init --recursive
+pandoc=docker run --rm -u `id -u`:`id -g` -v `pwd`:/pandoc dalibo/pandocker:stable
 
 build:
-	pandoc -t revealjs -s -o index.html index.md -V revealjs-url=https://unpkg.com/reveal.js@3.9.2/
+	mkdir -p dist
+	$(pandoc) --mathjax -t revealjs -s --standalone --section-divs -s -o dist/index.html src/index.md
 
 server:
-	python3.7 -m http.server
+	python -m http.server --directory ./dist
