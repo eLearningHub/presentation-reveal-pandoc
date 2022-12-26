@@ -14,27 +14,17 @@ jobs:
     steps:
     - uses: actions/checkout@master
     
-    - name: mkdir
-      run: |
-       mkdir public
-       
-    - name: Generate HTML slides with Pandoc
-      uses: docker://pandoc/latex:2.19
-      with:
-        args: "--mathjax -t revealjs -s --standalone --section-divs -s -o src/index.html src/index.md"
+    - name: make
+      run: make build
 
     - name: Upload artifact
       uses: actions/upload-artifact@master
       with:
         name: slides
-        path: src
-
-    - name: Remove extra files
-      run: |
-       rm -f ./src/index.md ./src/template-revealjs.html
+        path: dist
  
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: src
+        publish_dir: dist
