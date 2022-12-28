@@ -21,10 +21,10 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: slides
-        path: dist
+        path: slides
  
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: dist
+        publish_dir: slides
